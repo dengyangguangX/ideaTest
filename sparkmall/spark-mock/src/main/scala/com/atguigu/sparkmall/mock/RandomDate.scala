@@ -12,6 +12,10 @@ object RandomDate {
     randomDate.lastDateTime=startDate.getTime
     randomDate
   }
+  def getRandomDateTime(startDate:Date,endDate:Date):Date = {
+    val randomTime = startDate.getTime + new Random().nextInt((endDate.getTime - startDate.getTime).toInt)
+    new Date(randomTime)
+  }
 }
 
 class RandomDate{
@@ -24,5 +28,6 @@ class RandomDate{
 
     new Date( lastDateTime)
   }
+
 }
 

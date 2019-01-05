@@ -4,7 +4,7 @@ import org.apache.commons.configuration2.{FileBasedConfiguration, PropertiesConf
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder
 import org.apache.commons.configuration2.builder.fluent.Parameters
 
-object ConfigurationUtil {
+object ConfigUtil {
   // FileBasedConfigurationBuilder:产生一个传入的类的实例对象
   // FileBasedConfiguration:融合FileBased与Configuration的接口
   // PropertiesConfiguration:从一个或者多个文件读取配置的标准配置加载器
@@ -13,7 +13,7 @@ object ConfigurationUtil {
 
 
   def apply(propertiesName:String) = {
-    val configurationUtil = new ConfigurationUtil()
+    val configurationUtil = new ConfigUtil()
     if (configurationUtil.config == null) {
       configurationUtil.config = new FileBasedConfigurationBuilder[FileBasedConfiguration](classOf[PropertiesConfiguration])
         .configure(new Parameters().properties().setFileName(propertiesName)).getConfiguration
@@ -23,7 +23,7 @@ object ConfigurationUtil {
 
 }
 
-class ConfigurationUtil(){
+class ConfigUtil(){
   var config:FileBasedConfiguration=null
 
 }

@@ -1,4 +1,4 @@
-package com.atguigu.sparkmall.common.util.com.atguigu.sparkmall.common.model
+package com.atguigu.sparkmall.common.model
 
 object DataModel {
 
